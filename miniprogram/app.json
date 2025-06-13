@@ -1,0 +1,125 @@
+{
+	"pages": [
+		"projects/activitypart/pages/default/index/default_index",
+		"projects/activitypart/pages/about/index/about_index",
+		"projects/activitypart/pages/search/search",
+		"projects/activitypart/pages/my/index/my_index",
+		"projects/activitypart/pages/my/reg/my_reg",
+		"projects/activitypart/pages/my/edit/my_edit",
+		"projects/activitypart/pages/my/foot/my_foot",
+		"projects/activitypart/pages/my/fav/my_fav",
+		"projects/activitypart/pages/news/index/news_index",
+		"projects/activitypart/pages/news/detail/news_detail",
+		"projects/activitypart/pages/news/cate1/news_cate1",
+		"projects/activitypart/pages/admin/news/list/admin_news_list",
+		"projects/activitypart/pages/admin/news/add/admin_news_add",
+		"projects/activitypart/pages/admin/news/edit/admin_news_edit",
+		"projects/activitypart/pages/admin/setup/about/admin_setup_about",
+		"projects/activitypart/pages/admin/setup/about_list/admin_setup_about_list",
+		"projects/activitypart/pages/admin/setup/qr/admin_setup_qr",
+		"projects/activitypart/pages/admin/index/home/admin_home",
+		"projects/activitypart/pages/admin/index/login/admin_login",
+		"projects/activitypart/pages/admin/content/admin_content",
+		"projects/activitypart/pages/admin/mgr/log/admin_log_list",
+		"projects/activitypart/pages/admin/mgr/edit/admin_mgr_edit",
+		"projects/activitypart/pages/admin/mgr/list/admin_mgr_list",
+		"projects/activitypart/pages/admin/mgr/add/admin_mgr_add",
+		"projects/activitypart/pages/admin/mgr/pwd/admin_mgr_pwd",
+		"projects/activitypart/pages/admin/user/list/admin_user_list",
+		"projects/activitypart/pages/admin/user/detail/admin_user_detail",
+		"projects/activitypart/pages/admin/user/export/admin_user_export",
+		"projects/activitypart/pages/activity/index/activity_index",
+		"projects/activitypart/pages/activity/detail/activity_detail",
+		"projects/activitypart/pages/activity/join/activity_join",
+		"projects/activitypart/pages/activity/my_join_list/activity_my_join_list",
+		"projects/activitypart/pages/activity/my_join_detail/activity_my_join_detail",
+		"projects/activitypart/pages/activity/my_join_self/activity_my_join_self",
+		"projects/activitypart/pages/activity/calendar/activity_calendar",
+		"projects/activitypart/pages/activity/join_list/activity_join_list",
+		"projects/activitypart/pages/admin/activity/join_list/admin_activity_join_list",
+		"projects/activitypart/pages/admin/activity/self/admin_activity_self",
+		"projects/activitypart/pages/admin/activity/export/admin_activity_export",
+		"projects/activitypart/pages/admin/activity/scan/admin_activity_scan",
+		"projects/activitypart/pages/admin/activity/list/admin_activity_list",
+		"projects/activitypart/pages/admin/activity/add/admin_activity_add",
+		"projects/activitypart/pages/admin/activity/edit/admin_activity_edit",
+		"projects/activitypart/pages/comment/list/comment_list",
+		"projects/activitypart/pages/comment/add/comment_add",
+		"projects/activitypart/pages/product/detail/product_detail",
+		"projects/activitypart/pages/product/index/product_index",
+		"projects/activitypart/pages/admin/product/list/admin_product_list",
+		"projects/activitypart/pages/admin/product/add/admin_product_add",
+		"projects/activitypart/pages/admin/product/edit/admin_product_edit",
+		"projects/activitypart/pages/product/list/product_list",
+		"projects/activitypart/pages/admin/info/list/admin_info_list",
+		"projects/activitypart/pages/info/my_list/info_my_list",
+		"projects/activitypart/pages/info/add/info_add",
+		"projects/activitypart/pages/info/edit/info_edit",
+		"projects/activitypart/pages/info/detail/info_detail",
+		"projects/activitypart/pages/admin/info/reply/admin_info_reply",
+		"projects/activitypart/pages/info/list/info_list",
+		"projects/activitypart/pages/news/cate2/news_cate2",
+		"cmpts/public/form/form_set/field/form_set_field",
+		"cmpts/public/form/form_show/content/form_show_content",
+		"pages/test1/test1"
+	],
+	"window": {
+		"backgroundColor": "#f1f1f1",
+		"backgroundTextStyle": "dark",
+		"navigationBarBackgroundColor": "#E72920",
+		"navigationBarTitleText": "党群活动中心小程序",
+		"navigationBarTextStyle": "white"
+	},
+	"tabBar": {
+		"custom": false,
+		"backgroundColor": "#FFFFFF",
+		"color": "#999999",
+		"selectedColor": "#E72920",
+		"list": [
+			{
+				"pagePath": "projects/activitypart/pages/default/index/default_index",
+				"text": "首页",
+				"iconPath": "/projects/activitypart/images/tabbar/home.png",
+				"selectedIconPath": "/projects/activitypart/images/tabbar/home_cur.png"
+			},
+			{
+				"pagePath": "projects/activitypart/pages/news/cate1/news_cate1",
+				"text": "通知",
+				"iconPath": "/projects/activitypart/images/tabbar/product.png",
+				"selectedIconPath": "/projects/activitypart/images/tabbar/product_cur.png"
+			},
+			{
+				"pagePath": "projects/activitypart/pages/activity/index/activity_index",
+				"text": "活动",
+				"iconPath": "/projects/activitypart/images/tabbar/enroll.png",
+				"selectedIconPath": "/projects/activitypart/images/tabbar/enroll_cur.png"
+			},
+			{
+				"pagePath": "projects/activitypart/pages/product/index/product_index",
+				"text": "学习课堂",
+				"iconPath": "/projects/activitypart/images/tabbar/checkin.png",
+				"selectedIconPath": "/projects/activitypart/images/tabbar/checkin_cur.png"
+			},
+			{
+				"pagePath": "projects/activitypart/pages/my/index/my_index",
+				"text": "我的",
+				"iconPath": "/projects/activitypart/images/tabbar/my.png",
+				"selectedIconPath": "/projects/activitypart/images/tabbar/my_cur.png"
+			}
+		]
+	},
+	"permission": {
+		"scope.userLocation": {
+			"desc": "获取你当前位置信息用于小程序位置接口的效果展示"
+		}
+	},
+	"requiredPrivateInfos": [
+		"chooseLocation"
+	],
+	"usingComponents": {
+		"cmpt-comm-list": "/cmpts/public/list/comm_list_cmpt",
+		"cmpt-picker": "/cmpts/public/picker/picker_cmpt",
+		"cmpt-modal": "/cmpts/public/modal/modal_cmpt"
+	},
+	"sitemapLocation": "sitemap.json"
+}

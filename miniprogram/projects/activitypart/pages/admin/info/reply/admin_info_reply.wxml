@@ -1,0 +1,36 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l text-grey"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l text-grey"></view>
+
+<view class="main-admin" wx:if="{{isAdmin&&isLoad}}">
+	<view class="form-box shadow">
+
+		<view class="form-group">
+			<view class="action text-bold text-l">回复内容</view>
+			<view class="action">{{formReply.length}}/10000</view>
+		</view>
+
+		<view class="form-group" id="formReplyShow">
+			<view class="title must">是否公开展示</view>
+			<cmpt-radio bind:select="bindShowCmpt" mark="replyShow" show="row" style="flex:1" itemSelected="{{formReplyShow}}" sourceDataStr="1=是,0=否" />
+		</view>
+		<view wx:if="{{formCheckSetFocus}}" class="hint-desc error">{{formCheckSetFocus}}</view>
+
+		<view class="form-group align-start">
+			<textarea name="content" placeholder-class="phc" placeholder="请输入回复内容" style="min-height:550rpx" model:value="{{formReply}}" maxlength="10000" focus="{{formReplyFocus}}" auto-height="true"></textarea>
+		</view>
+		<view wx:if="{{formReplyFocus}}" class="hint-desc error">{{formReplyFocus}}</view>
+
+
+
+	</view>
+
+
+
+	<view class="form-box shadow margin-top-xs">
+		<cmpt-form-show id="cmpt-form" mark="cmpt-form" source="admin" isCacheMatch="{{false}}" fields="{{fields}}" forms="{{formForms}}" isDefMatch="{{id?false:true}}">
+		</cmpt-form-show>
+	</view>
+
+
+	<button bindtap="bindFormSubmit" class="btn-admin margin-top-xs">提交</button>
+</view>

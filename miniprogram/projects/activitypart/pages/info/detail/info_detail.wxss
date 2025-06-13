@@ -1,0 +1,35 @@
+@import "../../../style/skin.wxss"; 
+.submit-line {
+	width: 100%;
+}
+
+.form-group .mobile {
+	flex: 1;
+	text-align: left;
+}
+
+.submit-line {
+	width: 100%;
+}
+
+.form-group .mobile {
+	flex: 1;
+	text-align: left;
+	font-size:28rpx;
+}
+
+.form-group .pic {
+	width: 110rpx;
+	height: 110rpx;
+	margin-right: 16rpx;
+	margin-bottom: 10rpx;
+	border-radius: 10rpx;
+	position: relative;
+	margin-bottom: 16rpx;
+}
+
+.form-group  .pic>image {
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
+}

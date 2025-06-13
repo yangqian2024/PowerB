@@ -1,0 +1,10 @@
+{
+	"usingComponents": {
+		"cmpt-radio": "/cmpts/public/radio/radio_cmpt",
+		"cmpt-form-show": "/cmpts/public/form/form_show/form_show_cmpt"  
+	},
+	"navigationBarBackgroundColor": "#2499f2",
+	"navigationBarTextStyle": "white",
+	"navigationBarTitleText": "答复",
+	"enablePullDownRefresh": true
+}

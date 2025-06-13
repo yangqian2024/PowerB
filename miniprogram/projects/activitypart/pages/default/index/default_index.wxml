@@ -1,0 +1,123 @@
+<view class="main">
+	<view class="up">
+		<image mode="widthFix" src="../../../images/home.jpg" />
+	</view>
+
+	<view class="menu">
+
+		<view class="inner ">
+
+			<view class="mm">
+				<view bindtap="url" wx:for="{{cateList}}" wx:key="key" data-url="../../product/list/product_list?id={{item.id}}" class="item">
+					<view class="item-inner">
+						<view class="img">
+							<image src="../../../images/menu/p{{item.id}}.png" />
+						</view>
+						<view class="title">{{item.title}}</view>
+					</view>
+				</view>
+			</view>
+
+			<!--guide begin -->
+			<view class="guide">
+				<view class="item">
+					<view class="left" bindtap="url" data-url="../../activity/calendar/activity_calendar">
+						<image src="../../../images/home/0.jpg" mode="aspectFill" lazy-load="{{true}}" />
+						<view class="line1">活动日历</view>
+					</view>
+					<view class="right">
+						<view class="line" bindtap="url" data-type="relaunch" data-url="../../news/cate1/news_cate1">
+							<image src="../../../images/home/1.png" mode="aspectFill" />
+							<view class="txt1">通知公告</view>
+						</view>
+						<view class="line" bindtap="url" data-url="../../news/cate2/news_cate2">
+							<image src="../../../images/home/2.png" mode="aspectFill" />
+							<view class="txt1">社区风采</view>
+						</view>
+						<view class="line" bindtap="url" data-url="../../info/list/info_list">
+							<image src="../../../images/home/3.png" mode="aspectFill" />
+							<view class="txt1">意见反馈</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<!--guide END -->
+
+
+
+		</view>
+		<view class="line1"></view>
+	</view>
+
+
+
+
+
+	<view class="down">
+
+		<view class="tab-line1">
+			<view bindtap="bindCurTap" data-cur="new" class="item {{cur=='new'?'cur':''}}">最新活动</view>
+			<view bindtap="bindCurTap" data-cur="hot" class="item {{cur=='hot'?'cur':''}}">最热活动</view>
+		</view>
+
+		<!-- List Begin -->
+		<view wx:if="{{!newList||!hotList}}" class="margin-top load loading text-l load-project"></view>
+
+		<view class="list" wx:if="{{cur=='new'}}">
+			<view wx:for="{{newList}}" wx:key="key" class="item" bindtap="url" data-url="../../activity/detail/activity_detail?id={{item._id}}">
+				<image class="left loading shadow-project" mode="aspectFill" lazy-load="{{true}}" src="{{item.ACTIVITY_OBJ.cover[0]}}" />
+				<view class="right">
+					<view class="top">
+						<view class="title content-cut-one">{{item.ACTIVITY_TITLE}}</view>
+						<view class="desc content-cut-one"><text class="icon-time margin-right-xxs"></text>{{item.time}}</view>
+					</view>
+					<view class="line">
+						<view class="users">
+							<view class="pic-group">
+								<image wx:for="{{item.ACTIVITY_USER_LIST}}" wx:for-index="idx" wx:key="key" wx:if="{{idx<3}}" wx:for-item="itm" class="pic round loading" mode="aspectFill" lazy-load="{{true}}" src="{{itm.USER_PIC}}" />
+							</view>
+							<text wx:if="{{item.ACTIVITY_JOIN_CNT}}" class="num">+{{item.ACTIVITY_JOIN_CNT}}人报名</text>
+							<text wx:else class="num">{{item.ACTIVITY_JOIN_CNT}}人报名</text>
+						</view>
+						<view class="join {{item.statusDesc=='报名中'?'comm':''}}">
+							<text wx:if="{{item.statusDesc=='报名中'}}">报名中</text>
+							<text wx:else>{{item.statusDesc}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="list" wx:if="{{cur=='hot'}}">
+			<view wx:for="{{hotList}}" wx:key="key" class="item" bindtap="url" data-url="../../activity/detail/activity_detail?id={{item._id}}">
+				<image class="left loading shadow-project" mode="aspectFill" lazy-load="{{true}}" src="{{item.ACTIVITY_OBJ.cover[0]}}" />
+				<view class="right">
+					<view class="top">
+						<view class="title content-cut-one">{{item.ACTIVITY_TITLE}}</view>
+						<view class="desc content-cut-one"><text class="icon-time margin-right-xxs"></text>{{item.time}}</view>
+					</view>
+					<view class="line">
+						<view class="users">
+							<view class="pic-group">
+								<image wx:for="{{item.ACTIVITY_USER_LIST}}" wx:for-index="idx" wx:key="key" wx:if="{{idx<3}}" wx:for-item="itm" class="pic round loading" mode="aspectFill" lazy-load="{{true}}" src="{{itm.USER_PIC}}" />
+							</view>
+							<text wx:if="{{item.ACTIVITY_JOIN_CNT}}" class="num">+{{item.ACTIVITY_JOIN_CNT}}人报名</text>
+							<text wx:else class="num">{{item.ACTIVITY_JOIN_CNT}}人报名</text>
+						</view>
+						<view class="join {{item.statusDesc=='报名中'?'comm':''}}">
+							<text wx:if="{{item.statusDesc=='报名中'}}">报名中</text>
+							<text wx:else>{{item.statusDesc}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- List END -->
+	</view>
+	<view style="height: 200rpx;"></view>
+</view>
+
+<block wx:if="{{skin.IS_SUB}}">
+	<import src="../../tpls/menu_tpl.wxml" />
+	<template is="menuTpl" data="{{curMenu:'home_index',returnHome:false}}" />
+</block>

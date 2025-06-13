@@ -1,0 +1,58 @@
+<view wx:if="{{!isLoad}}" class="margin-top load loading text-l load-project"></view>
+<block wx:if="{{isLoad}}">
+	<cmpt-comm-list _params="{{_params}}" type="info-list" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="info/my_list" isTotalMenu="{{true}}" sortMenusDefaultIndex="0" topBottom="120" placeholder="搜索" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+
+		</view>
+
+		<!-- List Begin -->
+		<view class="text-pic-list-box padding-project">
+
+			<view class="item card-project shadow-project" wx:for="{{dataList.list}}" wx:key="index">
+
+				<view class="desc">
+					<view class="left"><text class="icon-edit text-white"></text></view>
+					<view class="right content-cut-three">{{item.INFO_OBJ.desc}}</view>
+				</view>
+
+				<view class="line1">
+					<view class="tt"><text class="icon-title text-red margin-right-xxs "></text>提交人：{{item.INFO_OBJ.name}}</view>
+					<view class="tt"><text class="icon-title text-red margin-right-xxs"></text>类别：{{item.INFO_OBJ.type}}</view>
+					<view class="tt  text-green" wx:if="{{item.INFO_STATUS==1}}"><text class="icon-title text-red margin-right-xxs"></text>已答复：{{item.INFO_REPLY_TIME}}</view>
+					<view class="tt text-red" wx:else><text class="icon-title text-red margin-right-xxs"></text>待答复</view>
+				</view>
+
+				<view class="line3">
+					<view class="left">{{item.INFO_ADD_TIME}}</view>
+					<view bind:tap="url" data-url="../detail/info_detail?idx={{index}}" class="right">查看详情</view>
+				</view>
+
+
+				<view class="data data-button" wx:if="{{item.INFO_STATUS==0}}">
+					<button bindtap="url" data-url="../edit/info_edit?id={{item._id}}" class="btn mid bg-gray text-black"><text class="icon-edit margin-right-xxs"></text>修改</button>
+
+					<button bindtap="bindDelTap" data-id="{{item._id}}" class="btn mid bg-gray text-black"><text class="icon-delete margin-right-xxs text-red"></text>删除</button>
+
+				</view>
+
+			</view>
+
+			<!--load begin-->
+			<import src="../../../../../tpls/public/list_load_tpl.wxml" />
+			<template is="listLoadTpl" data="{{skin:'load-project',dataList}}" />
+			<!--load end-->
+
+		</view>
+		<!-- List END -->
+
+	</cmpt-comm-list>
+
+	<!--  button Begin -->
+	<!--  button END -->
+
+	<view class="post safe-bottom">
+		<button capture-bind:tap="url" data-url="../add/info_add" class="btn-base btn-project shadow"><text class="icon-post margin-right-xs"></text>提交意见</button>
+	</view>
+
+</block>

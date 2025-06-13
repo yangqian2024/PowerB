@@ -1,0 +1,90 @@
+<block wx:if="{{isAdmin&&isLoad}}">
+	<cmpt-comm-list source='admin' type="admin-info-list" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="admin/info_list" sortMenusDefaultIndex="0" topBottom="50" placeholder="搜索" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+
+		</view>
+		<!-- List Begin -->
+		<view class="admin-comm-list">
+			<view wx:if="{{dataList && dataList.total }}" class="load text-grey">共有{{dataList.total}}条符合条件记录</view>
+
+			<view class="item" wx:for="{{dataList.list}}" wx:key="key">
+				<view class="no">{{index+1}}</view>
+				<view class="header">
+					<view class="left text-cut text-s text-grey">{{item.INFO_ADD_TIME}}
+						<!--用户名：{{item.user.USER_NAME}}-->
+					</view>
+					<view class="right">
+						<text wx:if="{{item.INFO_STATUS==1}}" class="text-green">「已答复」</text>
+						<text wx:elif="{{item.INFO_STATUS==0}}" class="text-red">「待答复」</text>
+					</view>
+				</view>
+
+				<view class="info">
+					<view wx:if="{{cateIdOptions.length>1}}" class="info-item">
+						<view class="title">分类</view>
+						<view class="mao">：</view>
+						<view class="content">『{{item.INFO_CATE_NAME}}』</view>
+					</view>
+
+
+					<!--<view class="info-item">
+						<view class="title">排序号</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.INFO_ORDER}} <text class="margin-left-xxs text-grey">(小的先显示)</text></view>
+					</view> 
+-->
+
+
+					<view class="info-item {{item.type=='image'?'img':''}}" wx:key="key" wx:for="{{item.INFO_FORMS}}">
+						<view class="title">{{item.title}}</view>
+						<view class="mao">：</view>
+						<view wx:if="{{item.type=='image'}}" class="content">
+							<view class="pic" wx:for="{{item.val}}" wx:for-item="itm" wx:key="key1" bindtap="url" data-type="image" data-url="{{itm}}">
+								<text class="no">{{index+1}}</text>
+								<image src="{{itm}}" mode="aspectFill" class="loading" show-menu-by-longpress="{{true}}" />
+							</view>
+						</view>
+						<view wx:elif="{{item.type=='switch'}}" class="content">{{item.val===true?'是':'否'}} </view>
+						<view wx:elif="{{item.mark=='phone'}}" bindtap="url" data-url="{{item.val}}" data-type="phone" class="content">{{item.val}} <text class="margin-left-xs icon-phone"></text> </view>
+						<view wx:else class="content">{{item.val}} </view>
+					</view>
+
+
+					<view class="info-item">
+						<view class="title">提交时间</view>
+						<view class="mao">：</view>
+						<view class="content text-grey">{{item.INFO_ADD_TIME}}</view>
+					</view>
+
+					<view class="reply" wx:if="{{item.INFO_STATUS==1}}">
+						<text><text class="text-black">答复内容：</text>{{item.INFO_REPLY}}</text>
+						<text class="margin-top-s"><text class="text-black">答复时间：</text>{{item.INFO_REPLY_TIME}}</text>
+						<text class="margin-top-s"><text class="text-black">展示方式：</text>{{item.INFO_REPLY_SHOW==1?'公开':'不公开'}}</text>
+					</view>
+					<view class="oprt">
+						<view data-idx="{{index}}" bindtap="url" data-url="../reply/admin_info_reply?id={{item._id}}&idx={{index}}" data-idx="{{index}}" class="btn margin-right-s">去答复</view>
+
+						<view wx:if="{{item.INFO_STATUS==1}}" style="width: unset;padding:0 10rpx" bindtap="bindStatusTap" data-id="{{item._id}}" data-idx="{{index}}" data-status="0" class="btn margin-right-s">标记为待答复</view>
+
+						<view bindtap="bindDelTap" data-id="{{item._id}}" class="btn margin-right-s">删除</view>
+
+			 
+
+					</view>
+				</view>
+			</view>
+
+		</view>
+		<!-- List END -->
+
+		<!--load begin-->
+		<import src="../../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{dataList,skin:'text-grey'}}" />
+		<!--load end-->
+
+
+	</cmpt-comm-list>
+
+
+</block>

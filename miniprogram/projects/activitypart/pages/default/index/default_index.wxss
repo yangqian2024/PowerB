@@ -1,0 +1,385 @@
+@import "../../../../../style/public/comm_box_list.wxss";
+@import "../../../style/skin.wxss";
+
+page {
+	background-image: linear-gradient(180deg, #E72920, #E72920, #FDCBBD, #FDCBBD);
+	background-repeat: no-repeat;
+	background-color: #FDCBBD;
+}
+
+.main {
+	padding: 0rpx 0rpx 100rpx;
+}
+
+.up {
+	width: 100%;
+	padding: 0 !important;
+}
+
+.up image {
+	width: 100%;
+}
+
+.menu {
+	width: 100%;
+	margin-top: -70rpx;
+	position: relative;
+	padding: 0 20rpx;
+}
+
+.menu .inner {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20rpx 0rpx;
+	background-color: #fff;
+	border-radius: 30rpx;
+	z-index: 999;
+	flex-direction: column;
+}
+
+.menu .inner .mm {
+	display: flex;
+	width: 100%;
+}
+
+.menu .inner .mm .item {
+	width: 25%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 180rpx;
+}
+
+.menu .inner .mm .item .item-inner {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.menu .inner .mm .item .item-inner .img {
+	background-color: #f8f8f8;
+	width: 100rpx;
+	height: 100rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20%;
+}
+
+
+.menu .inner .mm .item .item-inner .img image {
+	width: 70rpx;
+	height: 70rpx;
+}
+
+.menu .inner .mm .item .item-inner .title {
+	font-size: 26rpx;
+	color: var(--projectColor);
+	margin-top: 10rpx;
+}
+
+.down {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10rpx 0rpx;
+	z-index: 9999;
+	position: relative;
+}
+
+.guide {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	padding: 20rpx 30rpx; 
+}
+
+.guide .item {
+	width: 100%;
+	display: flex;
+	z-index: 999; 
+	background-color: #fff;
+	border-radius: 30rpx;
+}
+
+.guide .item .left {
+	width: 310rpx;
+	background-image: linear-gradient(#6dab3f, #7BC541);
+	height: 310rpx;
+	border-radius: 20rpx;
+	padding: 30rpx 30rpx;
+	margin-right: 20rpx;
+	position: relative;
+}
+
+.guide .item .left image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: inherit;
+	height: inherit;
+	border-radius: inherit;
+	z-index: 1;
+}
+
+.guide .item .left .line1 {
+	font-size: 32rpx;
+	margin-bottom: 20rpx;
+	z-index: 9;
+	position: relative;
+	color: #fff;
+}
+
+.guide .item .right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.guide .item .right .line {
+	width: 100%;
+	background-image: linear-gradient(45deg, #276eb0, #2B97FF);
+	border-radius: 10rpx;
+	padding: 20rpx 20rpx;
+	height: 96rpx;
+	position: relative;
+}
+
+.guide .item .right image {
+	position: absolute;
+	bottom: 6rpx;
+	right: 10rpx;
+	width: 60rpx;
+	height: 60rpx;
+	z-index: 1;
+	opacity: .8;
+}
+
+.guide .item .right .line:nth-child(1) {
+	background-image: linear-gradient(-45deg, #FB9047, #FA6241);
+}
+
+.guide .item .right .line:nth-child(2) {
+	background-image: linear-gradient(-45deg, #a8a9f3, #6076ee);
+}
+
+.guide .item .right .line:nth-child(3) {
+	background-image: linear-gradient(-45deg, #61EAC3, #4FC3B5);
+} 
+
+
+.guide .item .right .line .txt1 {
+	font-size: 26rpx;
+	color: #fff;
+	margin-bottom: 10rpx;
+	z-index: 9;
+	position: relative;
+}
+
+.tab-line {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 10rpx 30rpx 10rpx;
+	align-items: center;
+	margin-top: 20rpx;
+}
+
+.tab-line .item {
+	font-size: 30rpx;
+	color: var(--projectColor);
+	font-weight: bold;
+	position: relative;
+}
+
+.tab-line .item1 {
+	font-size: 24rpx;
+	color: #fff;
+	padding: 6rpx 24rpx;
+	border-radius: 30rpx;
+}
+
+
+
+.tab-line1 {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 10rpx 30rpx 10rpx;
+	align-items: flex-end;
+	margin-top: 20rpx;
+	margin-bottom: 30rpx;
+}
+
+.tab-line1 .item {
+	font-size: 30rpx;
+	color: #fff;
+	position: relative;
+	padding: 0 30rpx;
+}
+
+.tab-line1 .item.cur {
+	font-size: 30rpx;
+	color: var(--projectColor);
+	font-weight: bold;
+}
+
+.tab-line1 .item.cur:after {
+	width: 20%;
+	position: absolute;
+	bottom: -16rpx;
+	left: 50%;
+	height: 8rpx;
+	content: '';
+	border-radius: 30%;
+	background-color: #FF4E4D;
+	transform: translateX(-50%);
+}
+
+.list {
+	width: 100%;
+	padding: 0rpx 20rpx;
+	display: flex;
+	flex-direction: column;
+}
+
+.list .item {
+	width: 100%;
+	display: flex;
+	background-color: #fff;
+	padding: 20rpx 20rpx 0rpx 0;
+	position: relative;
+	border-radius: 10rpx;
+	border-top-right-radius: 30rpx !important;
+	border-bottom-left-radius: 30rpx !important;
+	margin-bottom: 60rpx;
+	position: relative;
+}
+
+.list .item .left {
+	width: 200rpx;
+	height: 250rpx;
+	border-radius: 10rpx;
+	margin-right: 25rpx;
+	margin-top: -40rpx;
+	border-top-right-radius: 30rpx !important;
+	border-bottom-left-radius: 30rpx !important;
+}
+
+.list .item .right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-bottom: 20rpx;
+}
+
+.list .item .right .top {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.list .item .right .top .title {
+	width: 100%;
+	font-size: 30rpx;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 20rpx;
+	margin-top: 14rpx;
+}
+
+.list .item .right .top .desc {
+	width: 100%;
+	font-size: 26rpx;
+	color: #999;
+	margin-bottom: 10rpx;
+}
+
+.list .item .right .line {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 24rpx;
+}
+
+.list .item .right .line .join {
+	font-size: 24rpx !important;
+	background-color: var(--greyLight);
+	color: #999;
+	border-radius: 10rpx;
+	line-height: 2;
+	padding: 0 25rpx;
+}
+
+.list .item .right .line .join.comm {
+	background-color: var(--projectCompareColor);
+	background-image: linear-gradient(45deg, #E72920, #FF4E4D, #FA8B14);
+	color: #fff;
+}
+
+.list .item .right .line .users {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+
+.list .item .right .line .users .pic-group {
+	display: flex;
+	padding: 0 10rpx 0 0rpx;
+	align-items: center;
+}
+
+.list .item .right .line .users .pic-group .pic {
+	width: 48rpx !important;
+	height: 48rpx !important;
+}
+
+.list .item .right .line .users .pic-group .pic {
+	margin-left: -20rpx;
+	border: 4rpx solid #fff;
+	vertical-align: middle;
+}
+
+.list .item .right .line .users .pic-group .pic:first-child {
+	margin-left: 0rpx;
+}
+
+.list .item .right .line .users .num {
+	font-size: 24rpx;
+	color: #bbb;
+}
+
+.tabs .tab-menu.cur {
+	color: #000 !important;
+	font-size: 30rpx !important;
+}
+
+
+.tabs .tab-menu.cur:after {
+	content: " ";
+	position: absolute;
+	left: 50%;
+	bottom: 0rpx;
+	width: 50%;
+	height: 8rpx !important;
+	background-color: var(--projectColor) !important;
+	transform: translateX(-50%);
+	border-radius: 20rpx !important;
+}
+
+.shadow-project,
+.scroll-list .item {
+	box-shadow: unset;
+}
+
+.loading {
+	color: var(--projectColor) !important;
+}
